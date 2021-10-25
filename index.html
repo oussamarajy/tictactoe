@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div>
+        <h3>Tic Tac Toe</h3>
+    </div>
+    <div class="elements">
+        
+        <button onClick="this.disabled=true; con1(); checker()" id="button1" ></button>
+        <button onClick="this.disabled=true; con2(); checker()" id="button2"></button>
+        <button onClick="this.disabled=true; con3(); checker()" id="button3"></button>
+        <button onClick="this.disabled=true; con4(); checker()" id="button4"></button>
+        <button onClick="this.disabled=true; con5(); checker()" id="button5"></button>
+        <button onClick="this.disabled=true; con6(); checker()" id="button6"></button>
+        <button onClick="this.disabled=true; con7(); checker()" id="button7"></button>
+        <button onClick="this.disabled=true; con8(); checker()" id="button8"></button>
+        <button onClick="this.disabled=true; con9(); checker()" id="button9"></button>
+    </div>
+<div>
+    <input id="restart" onclick="restart()" type="button" value="Restart">
+</div>
+    <style>
+         h3{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+            text-align: center;
+            
+            
+           
+        }
+        input[type=button]{
+            display: block;
+            width: 120px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            transform: translateX(-30px);
+            border-radius: 20px;
+            background: rgb(255,69,0, 0.5);
+            padding: 10px;
+            border: 1px solid rgb(255,69,0, 0.5);
+            color: white;
+            transition: .4s;
+            display: none;
+        }
+        input[type=button]:hover{
+            background: rgba(168, 47, 4, 0.5);
+        }
+    .elements{
+        display: inline-flex;
+  flex-wrap: wrap;
+  
+  margin-left: 30%;
+  
+  margin-top: 2%;
+  align-items: center;
+  justify-content: center;
+  min-width: 390px;
+  
+ 
+    }
+    button{
+        
+        flex-basis: 33.3333%;
+        font-size: 30px;
+  height: 120px;
+  width: 60px;
+  transition: .1s;
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
+  border-top: none;
+  border-left: none;
+  background: rgb(239, 134, 119, 0.3);
+        
+    }
+    #button7, #button8, #button9{
+        border-bottom: none;
+    }
+    #button3, #button6, #button9{
+        border-right: none;
+    }
+   
+    </style>
+    <script>
+      
+     var x1;
+    var x2;
+    var x3;
+    var x4;
+    var x5;
+    var x6;
+    var x7;
+    var x8;
+    var x9;
+    var x = 0;
+    
+const element1 = document.getElementById('button1');
+
+// always checking if the element is clicked, if so, do alert('hello')
+function con1() {
+    x += 1;
+    x1 = x;
+    if(x % 2 == 0){
+        new Audio('check.wav').play();
+	element1.innerHTML = '<img width="35%" src="X.png" alt="">';
+    
+    }
+    else{
+        new Audio('check.wav').play();
+        element1.innerHTML = '<img width="35%" src="O.png" alt="">';
+    }
+}
+const element2 = document.getElementById('button2');
+
+// always checking if the element is clicked, if so, do alert('hello')
+function con2() {
+	x += 1;
+    x2 = x;
+    if(x % 2 == 0){
+        new Audio('check.wav').play();
+	element2.innerHTML = '<img width="35%" src="X.png" alt="">';
+    }
+    else{
+        new Audio('check.wav').play();
+        element2.innerHTML = '<img width="35%" src="O.png" alt="">';
+    }
+}
+const element3 = document.getElementById('button3');
+
+// always checking if the element is clicked, if so, do alert('hello')
+function con3() {
+	x += 1;
+    x3 = x;
+    if(x % 2 == 0){
+        new Audio('check.wav').play();
+	element3.innerHTML = '<img width="35%" src="X.png" alt="">';
+    }
+    else{
+        new Audio('check.wav').play();
+        element3.innerHTML = '<img width="35%" src="O.png" alt="">';
+    }
+}
+const element4 = document.getElementById('button4');
+
+// always checking if the element is clicked, if so, do alert('hello')
+function con4() {
+	x += 1;
+    x4 = x;
+    if(x % 2 == 0){
+        new Audio('check.wav').play();
+	element4.innerHTML = '<img width="35%" src="X.png" alt="">';
+    }
+    else{
+        new Audio('check.wav').play();
+        element4.innerHTML = '<img width="35%" src="O.png" alt="">';
+    }
+}
+const element5 = document.getElementById('button5');
+
+// always checking if the element is clicked, if so, do alert('hello')
+function con5() {
+	x += 1;
+    x5 = x;
+    if(x % 2 == 0){
+        new Audio('check.wav').play();
+	element5.innerHTML = '<img width="35%" src="X.png" alt="">';
+    }
+    else{
+        new Audio('check.wav').play();
+        element5.innerHTML = '<img width="35%" src="O.png" alt="">';
+    }
+}
+const element6 = document.getElementById('button6');
+
+// always checking if the element is clicked, if so, do alert('hello')
+function con6(){
+	x += 1;
+    x6 = x;
+    if(x % 2 == 0){
+        new Audio('check.wav').play();
+	element6.innerHTML = '<img width="35%" src="X.png" alt="">';
+    }
+    else{
+        new Audio('check.wav').play();
+        element6.innerHTML = '<img width="35%" src="O.png" alt="">';
+    }
+}
+const element7 = document.getElementById('button7');
+
+// always checking if the element is clicked, if so, do alert('hello')
+function con7() {
+	x += 1;
+    x7 = x;
+    if(x % 2 == 0){
+        new Audio('check.wav').play();
+	element7.innerHTML = '<img width="35%" src="X.png" alt="">';
+    }
+    else{
+        new Audio('check.wav').play();
+        element7.innerHTML = '<img width="35%" src="O.png" alt="">';
+    }
+}
+const element8 = document.getElementById('button8');
+
+// always checking if the element is clicked, if so, do alert('hello')
+function con8() {
+	x += 1;
+    x8 = x;
+    if(x % 2 == 0){
+        new Audio('check.wav').play();
+	element8.innerHTML = '<img width="35%" src="X.png" alt="">';
+    }
+    else{
+        new Audio('check.wav').play();
+        element8.innerHTML = '<img width="35%" src="O.png" alt="">';
+    }
+}
+const element9 = document.getElementById('button9');
+
+// always checking if the element is clicked, if so, do alert('hello')
+function con9() {
+	x += 1;
+    x9 = x;
+    if(x % 2 == 0){
+        new Audio('check.wav').play();
+	element9.innerHTML = '<img width="35%" src="X.png" alt="">';
+    }
+    else{
+        new Audio('check.wav').play();
+        element9.innerHTML = '<img width="35%" src="O.png" alt="">';
+    }
+}
+    
+
+
+function checker(){
+    
+    
+    if(x1 != undefined && x2!= undefined && x3!= undefined){
+    if((x1 % 2 == 0 && x2 % 2 == 0 && x3 % 2 == 0) || (x1 % 2 != 0 && x2 % 2 != 0 && x3 % 2 != 0)){
+        new Audio('son.mp3').play()
+        document.getElementById('button1').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button2').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button3').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('restart').style.display = "block";
+    
+}
+}
+
+ if(x4 != undefined && x5!= undefined && x6!= undefined){
+    if((x4 % 2 == 0 && x5 % 2 == 0 && x6 % 2 == 0) || (x4 % 2 != 0 && x5 % 2 != 0 && x6 % 2 != 0)){
+        new Audio('son.mp3').play()
+        document.getElementById('button4').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button5').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button6').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('restart').style.display = "block";
+    
+}
+}
+
+ if(x7 != undefined && x8!= undefined && x9!= undefined){
+    if((x7 % 2 == 0 && x8 % 2 == 0 && x9 % 2 == 0) || (x7 % 2 != 0 && x8 % 2 != 0 && x9 % 2 != 0)){
+        new Audio('son.mp3').play()
+        document.getElementById('button7').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button8').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button9').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('restart').style.display = "block";
+    
+}
+}
+
+ if(x1 != undefined && x4!= undefined && x7!= undefined){
+    if((x1 % 2 == 0 && x4 % 2 == 0 && x7 % 2 == 0) || (x1 % 2 != 0 && x4 % 2 != 0 && x7 % 2 != 0)){
+        new Audio('son.mp3').play()
+        document.getElementById('button1').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button4').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button7').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('restart').style.display = "block";
+    
+}
+}
+
+ if(x2 != undefined && x5!= undefined && x8!= undefined){
+    if((x2 % 2 == 0 && x5 % 2 == 0 && x8 % 2 == 0) || (x2 % 2 != 0 && x5 % 2 != 0 && x8 % 2 != 0)){
+        new Audio('son.mp3').play()
+        document.getElementById('button2').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button5').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button8').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('restart').style.display = "block";
+    
+}
+}
+ if(x3 != undefined && x6!= undefined && x9!= undefined){
+    if((x3 % 2 == 0 && x6 % 2 == 0 && x9 % 2 == 0) || (x3 % 2 != 0 && x6 % 2 != 0 && x9 % 2 != 0)){
+        new Audio('son.mp3').play()
+        document.getElementById('button3').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button6').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button9').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('restart').style.display = "block";
+    
+}
+}
+ if(x1 != undefined && x5!= undefined && x9!= undefined){
+    if((x1 % 2 == 0 && x5 % 2 == 0 && x9 % 2 == 0) || (x1 % 2 != 0 && x5 % 2 != 0 && x9 % 2 != 0)){
+        new Audio('son.mp3').play()
+        document.getElementById('button1').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button5').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button9').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('restart').style.display = "block";
+    
+}
+}
+ if(x3 != undefined && x5!= undefined && x7!= undefined){
+    if((x3 % 2 == 0 && x5 % 2 == 0 && x7 % 2 == 0) || (x3 % 2 != 0 && x5 % 2 != 0 && x7 % 2 != 0)){
+        new Audio('son.mp3').play()
+        document.getElementById('button3').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button5').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('button7').style.background = "rgb(3, 192, 74, 0.5)";
+        document.getElementById('restart').style.display = "block";
+    
+}
+}
+
+
+}
+
+function restart(){
+    element1.innerHTML = "";
+    element2.innerHTML = "";
+    element3.innerHTML = "";
+    element4.innerHTML = "";
+    element5.innerHTML = "";
+    element6.innerHTML = "";
+    element7.innerHTML = "";
+    element8.innerHTML = "";
+    element9.innerHTML = "";
+    x = 0;
+    x1 = null;
+    x2 = null;
+    x3 = null;
+    x4 = null;
+    x5 = null;
+    x6 = null;
+    x7 = null;
+    x8 = null;
+    x9 = null;
+    for(var i = 1; i<=9; i++){
+        
+            document.getElementById('button'+i).style.background = "rgb(239, 134, 119, 0.3)";
+            document.getElementById("button"+i).disabled = false;
+        
+    }
+    document.getElementById('restart').style.display = "none";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>
